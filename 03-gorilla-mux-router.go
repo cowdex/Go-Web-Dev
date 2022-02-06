@@ -11,7 +11,7 @@ func main() {
 	r := mux.NewRouter()
 
 	r.HandleFunc("/books/{title}/page/{page}", func(w http.ResponseWriter, r *http.Request) {
-		vars := mux.Vars(r)
+		vars := mux.Vars(r) //it takes the http.Request as parameter and returns a map of the segments.
 		title := vars["title"]
 		page := vars["page"]
 
